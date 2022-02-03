@@ -18,6 +18,24 @@
 #ifndef CATCH_USER_CONFIG_HPP_INCLUDED
 #define CATCH_USER_CONFIG_HPP_INCLUDED
 
+
+
+#cmakedefine CATCH_CONFIG_ANDROID_LOGWRITE
+#cmakedefine CATCH_CONFIG_NO_ANDROID_LOGWRITE
+
+#if defined(CATCH_CONFIG_ANDROID_LOGWRITE) && defined(CATCH_CONFIG_NO_ANDROID_LOGWRITE)
+#error Cannot force ANDROID_LOGWRITE to both ON and OFF
+#endif
+
+#cmakedefine CATCH_CONFIG_CPP11_TO_STRING
+#cmakedefine CATCH_CONFIG_NO_CPP11_TO_STRING
+
+#if defined(CATCH_CONFIG_CPP11_TO_STRING) && defined(CATCH_CONFIG_NO_CPP11_TO_STRING)
+#error Cannot force CPP11_TO_STRING to both ON and OFF
+#endif
+
+
+///// -- tests below, remove later -- ////
 #cmakedefine CATCH_CONFIG_FOO_BAR_BAZ
 #cmakedefine CATCH_CONFIG_GLOBAL_NEXTAFTER
 
