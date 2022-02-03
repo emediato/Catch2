@@ -358,6 +358,7 @@ if (CATCH_BUILD_EXAMPLES OR CATCH_BUILD_EXTRA_TESTS)
     target_include_directories(Catch2_buildall_interface
       INTERFACE
         $<BUILD_INTERFACE:${SOURCES_DIR}/..>
+        $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/generated-includes>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     )
     target_compile_features(Catch2_buildall_interface
